@@ -112,13 +112,15 @@ nav > div i {
   display: flex;
 }
 
-.post-comments .comment p {
+.comment p {
+  border-radius: 20px;
+  background: #eeeeee;
   margin-left: 10px;
-  font-size: 14px;
-  color: #999;
+  padding: 15px;
+  font-size: 13px;
 }
 
-.post-comments .comment span {
+.comment span {
   font-weight: bold;
   margin-right: 6px;
 }
