@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Post from './Post'
+import PostItem from './PostItem'
 
 class PostList extends Component {
   state = {
@@ -9,7 +9,7 @@ class PostList extends Component {
         id: 1,
         author: {
           name: "Post author",
-          avatar: "http://url-da-imagem.com/imagem.jpg"
+          avatar: "https://i.pravatar.cc/150?img=3"
         },
         date: "04 Jun 2019",
         content: "Post text post text post text post text post text post text ?",
@@ -18,7 +18,7 @@ class PostList extends Component {
             id: 1,
             author: {
               name: "Commentary author",
-              avatar: "http://url-da-imagem.com/imagem.jpg"
+              avatar: "https://i.pravatar.cc/150?img=4"
             },
             content: "Commentary text commentary text commentary text commentary text commentary text"
           },
@@ -26,7 +26,7 @@ class PostList extends Component {
             id: 2,
             author: {
               name: "Commentary author",
-              avatar: "http://url-da-imagem.com/imagem.jpg"
+              avatar: "https://i.pravatar.cc/150?img=5"
             },
             content: "Commentary text commentary text commentary text commentary text commentary text"
           }
@@ -36,7 +36,7 @@ class PostList extends Component {
         id: 2,
         author: {
           name: "Post author",
-          avatar: "http://url-da-imagem.com/imagem.jpg"
+          avatar: "https://i.pravatar.cc/150?img=6"
         },
         date: "04 Jun 2019",
         content: "Post text post text post text post text post text post text ?",
@@ -45,7 +45,7 @@ class PostList extends Component {
             id: 1,
             author: {
               name: "Commentary author",
-              avatar: "http://url-da-imagem.com/imagem.jpg"
+              avatar: "https://i.pravatar.cc/150?img=7"
             },
             content: "Commentary text commentary text commentary text commentary text commentary text"
           },
@@ -53,7 +53,7 @@ class PostList extends Component {
             id: 2,
             author: {
               name: "Commentary author",
-              avatar: "http://url-da-imagem.com/imagem.jpg"
+              avatar: "https://i.pravatar.cc/150?img=8"
             },
             content: "Commentary text commentary text commentary text commentary text commentary text"
           }
@@ -63,7 +63,7 @@ class PostList extends Component {
         id: 3,
         author: {
           name: "Post author",
-          avatar: "http://url-da-imagem.com/imagem.jpg"
+          avatar: "https://i.pravatar.cc/150?img=9"
         },
         date: "04 Jun 2019",
         content: "Post text post text post text post text post text post text ?",
@@ -72,7 +72,7 @@ class PostList extends Component {
             id: 1,
             author: {
               name: "Commentary author",
-              avatar: "http://url-da-imagem.com/imagem.jpg"
+              avatar: "https://i.pravatar.cc/150?img=10"
             },
             content: "Commentary text commentary text commentary text commentary text commentary text"
           },
@@ -80,7 +80,7 @@ class PostList extends Component {
             id: 2,
             author: {
               name: "Commentary author",
-              avatar: "http://url-da-imagem.com/imagem.jpg"
+              avatar: "https://i.pravatar.cc/150?img=11"
             },
             content: "Commentary text commentary text commentary text commentary text commentary text"
           }
@@ -90,11 +90,13 @@ class PostList extends Component {
   };
 
   render() {
+    const { posts } = this.state;
+
     return (
-      <div className="post-list">
+      <div className="postlist">
         {
-          this.state.posts.map
-            (post => <Post key={post.id} post={post} />)
+          posts.map
+            (post => <PostItem key={post.id} {...post} />)
         }
       </div>
     )
